@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int  n=prices.size();           // size of array prices
+       int maxi=0;                      //Storing a 0 value in maxi        
+       int min_price=INT_MAX;           //storing some maximum value 
+
+        for(int i=0;i<n;i++){
+            min_price=min(min_price,prices[i]);            //updating min_price with the iteration
+            maxi=max(maxi,prices[i]-min_price);            // updating max by finding difference to get maximum profit 
+           
+        }
+           
+        
+        return maxi;       //return max  profit
+
+
+    }
+};
